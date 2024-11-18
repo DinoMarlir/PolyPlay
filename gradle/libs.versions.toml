@@ -1,0 +1,15 @@
+[versions]
+kotlin = "2.0.21"
+lombok = "1.18.36"
+annontations = "26.0.1"
+alert = "1.0.8"
+shadow = "8.1.1"
+
+[libraries]
+lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+annotations = { group = "org.jetbrains", name = "annotations", version.ref = "annontations" }
+alert = { group = "me.obsilabor", name = "alert", version.ref = "alert" }
+
+[plugins]
+jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow" }
