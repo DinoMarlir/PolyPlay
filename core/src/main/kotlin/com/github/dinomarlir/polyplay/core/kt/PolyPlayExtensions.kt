@@ -25,22 +25,51 @@ fun JavaPolyPlay.transaction(block: Transaction.() -> Unit) {
  */
 class Transaction(val polyPlay: JavaPolyPlay) {
 
+    /**
+     * Registers an instance of a class.
+     * @param clazz The class.
+     * @param instance The instance.
+     * @see JavaPolyPlay.setInstanceOf
+     */
     fun <T> instance(clazz: Class<T>, instance: T) {
         polyPlay.setInstanceOf(clazz, instance)
     }
 
+    /**
+     * Registers an instance of a class.
+     * @param clazz The class.
+     * @param block The block to create the instance.
+     * @see JavaPolyPlay.setInstanceOf
+     */
     fun <T> instance(clazz: Class<T>, block: () -> T) {
         polyPlay.setInstanceOf(clazz, block())
     }
 
+    /**
+     * Gets an instance of a class.
+     * @param clazz The class.
+     * @return The instance.
+     * @see JavaPolyPlay.getInstanceOf
+     */
     fun <T> instance(clazz: Class<T>): T? {
         return polyPlay.getInstanceOf(clazz).orElse(null)
     }
 
+    /**
+     * Gets an instance of a class.
+     * @param clazz The class.
+     * @return The instance.
+     * @see JavaPolyPlay.getInstanceOf
+     */
     fun <T : Any> instanceOptional(clazz: Class<T>): Optional<T> {
         return polyPlay.getInstanceOf(clazz)
     }
 
+    /**
+     * Removes an instance of a class.
+     * @param clazz The class.
+     * @see JavaPolyPlay.removeInstanceOf
+     */
     fun removeInstance(clazz: Class<*>) {
         polyPlay.removeInstanceOf(clazz)
     }
