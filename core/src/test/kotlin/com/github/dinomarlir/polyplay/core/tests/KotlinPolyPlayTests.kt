@@ -1,6 +1,5 @@
 package com.github.dinomarlir.polyplay.core.tests
 
-import com.github.dinomarlir.polyplay.core.PolyPlay
 import com.github.dinomarlir.polyplay.core.kt.PolyPlay
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertNotNull

@@ -34,6 +34,6 @@ public class PolyPlayTests {
         PolyPlay polyPlay = PolyPlay.getInstance();
         polyPlay.setInstanceOf(String.class, "Hello, World!");
         polyPlay.removeInstanceOf(String.class);
-        assertEquals(true, polyPlay.getInstanceOf(String.class).isEmpty() );
+        assertEquals(true, polyPlay.getInstanceOf(String.class).isEmpty());
     }
 }

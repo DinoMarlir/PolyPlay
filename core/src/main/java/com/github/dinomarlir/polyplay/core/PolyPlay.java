@@ -13,15 +13,14 @@ public class PolyPlay implements IClassProvider {
      * Singleton instance of PolyPlay.
      */
     private static final PolyPlay instance = new PolyPlay();
-
-    public static PolyPlay getInstance() {
-        return instance;
-    }
-
     /**
      * Map of instances.
      */
     private final Map<Class<?>, Object> instances = new HashMap<>();
+
+    public static PolyPlay getInstance() {
+        return instance;
+    }
 
     @Override
     public <T> Optional<T> getInstanceOf(Class<T> clazz) {

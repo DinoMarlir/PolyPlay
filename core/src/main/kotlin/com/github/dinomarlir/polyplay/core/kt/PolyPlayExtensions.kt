@@ -1,7 +1,7 @@
 package com.github.dinomarlir.polyplay.core.kt
 
+import java.util.*
 import com.github.dinomarlir.polyplay.core.PolyPlay as JavaPolyPlay
-import java.util.Optional
 
 val PolyPlay: JavaPolyPlay by lazy { JavaPolyPlay.getInstance() }
 
