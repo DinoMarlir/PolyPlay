@@ -7,6 +7,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Singleton class implementing IClassProvider.
+ *
+ * Used to get and set instances of classes.
+ * @see IClassProvider
+ */
 public class PolyPlay implements IClassProvider {
 
     /**
@@ -18,6 +24,10 @@ public class PolyPlay implements IClassProvider {
      */
     private final Map<Class<?>, Object> instances = new HashMap<>();
 
+    /**
+     * returns the singleton instance of PolyPlay.
+     * @return singleton instance of PolyPlay
+     */
     public static PolyPlay getInstance() {
         return instance;
     }
@@ -36,5 +46,14 @@ public class PolyPlay implements IClassProvider {
     @Override
     public void removeInstanceOf(Class<?> clazz) {
         instances.remove(clazz);
+    }
+
+    /**
+     * Empty constructor.
+     * Used to create an instance of PolyPlay.
+     * @see PolyPlay#getInstance()
+     */
+    public PolyPlay() {
+        // Empty constructor
     }
 }
