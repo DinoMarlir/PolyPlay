@@ -1,15 +1,16 @@
-package com.github.dinomarlir.polyplay.core
+package com.github.dinomarlir.polyplay.core.kt
 
+import com.github.dinomarlir.polyplay.core.PolyPlay as JavaPolyPlay
 import java.util.Optional
 
-val PolyPlay by lazy { com.github.dinomarlir.polyplay.core.PolyPlay.getInstance() }
+val PolyPlay: JavaPolyPlay by lazy { JavaPolyPlay.getInstance() }
 
-fun PolyPlay.transaction(block: Transaction.() -> Unit) {
+fun JavaPolyPlay.transaction(block: Transaction.() -> Unit) {
     val transaction = Transaction(PolyPlay)
     transaction.block()
 }
 
-class Transaction(val polyPlay: PolyPlay) {
+class Transaction(val polyPlay: JavaPolyPlay) {
 
     fun <T> instance(clazz: Class<T>, instance: T) {
         polyPlay.setInstanceOf(clazz, instance)

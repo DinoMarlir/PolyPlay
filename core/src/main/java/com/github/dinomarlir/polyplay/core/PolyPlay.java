@@ -1,7 +1,7 @@
 package com.github.dinomarlir.polyplay.core;
 
 import com.github.dinomarlir.polyplay.core.instance.IClassProvider;
-import lombok.Getter;
+import lombok.val;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,8 +12,11 @@ public class PolyPlay implements IClassProvider {
     /**
      * Singleton instance of PolyPlay.
      */
-    @Getter
-    private static PolyPlay instance = new PolyPlay();
+    private static final PolyPlay instance = new PolyPlay();
+
+    public static PolyPlay getInstance() {
+        return instance;
+    }
 
     /**
      * Map of instances.
@@ -22,7 +25,8 @@ public class PolyPlay implements IClassProvider {
 
     @Override
     public <T> Optional<T> getInstanceOf(Class<T> clazz) {
-        return Optional.of(clazz.cast(instances.get(clazz)));
+        val value = clazz.cast(instances.get(clazz));
+        return value == null ? Optional.empty() : Optional.of(value);
     }
 
     @Override
